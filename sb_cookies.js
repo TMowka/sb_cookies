@@ -3,7 +3,7 @@ const _ = require('lodash');
 const util = require('util');
 const config = require('./config.json');
 
-Array.prototype._cookieMapping = function (mapArray) {
+Array.prototype._cookieMapping = (mapArray) => {
     let resultString = '';
     for (let i = 0; i < this.length; i++) {
         for (let j = 0; j < mapArray.length; j++) {
@@ -44,7 +44,8 @@ Nightmare.action('clearCache',
             break;
     }
 
-    link = 'https://store.nike.com/fr/fr_fr/product/metcon-4-id/?piid=44371&pbid=274112809';
+    link = 'https://www.adidas.fr/';
+    proxy = { hostPort: "147.135.194.142:12345", login: "douma", password: "douma" };
 
     openBrowser(link, proxy);
 })();
@@ -72,7 +73,7 @@ function openBrowser(link, proxy) {
             .end()
             .then((cookies) => {
                 console.log(cookies._cookieMapping(config.mapArray));
-                //console.log(util.inspect(cookies));
+                console.log(util.inspect(cookies));
             }).catch((error) => {
                 console.error(util.inspect(error));
             });

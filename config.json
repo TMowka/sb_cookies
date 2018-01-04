@@ -5,6 +5,8 @@
   "alwaysOnTop": false,
   "mapArray": [
     { "domain": "www.adidas.com", "names": [ "sid" ] },
-    { "domain": ".nike.com", "names": [ "_abck" ] }
+    { "domain": ".nike.com", "names": [ "_abck" ] },
+    { "domain": ".ubiqlife.com", "names": [ "incap_ses_323_485440" ] },
+    { "domain": "www.adidas.fr", "names": [ "liveagent_sid" ] }
   ]
 }
