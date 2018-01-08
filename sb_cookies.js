@@ -29,7 +29,7 @@ Nightmare.action('clearCache',
         this.child.call('clearCache', done);
     });
 
-(function readArgs() {
+(() => {
     let args = process.argv.splice(2);
 
     let link = null;
@@ -43,9 +43,6 @@ Nightmare.action('clearCache',
             proxy = args[1];
             break;
     }
-
-    link = 'https://www.adidas.fr/';
-    proxy = { hostPort: "147.135.194.142:12345", login: "douma", password: "douma" };
 
     openBrowser(link, proxy);
 })();
