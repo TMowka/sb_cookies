@@ -29,7 +29,7 @@ Nightmare.action('clearCache',
         this.child.call('clearCache', done);
     });
 
-(() => {
+{
     let args = process.argv.splice(2);
 
     let link = null;
@@ -44,11 +44,8 @@ Nightmare.action('clearCache',
             break;
     }
 
-    //--------TEST MODE--------
-    link = 'https://api.nike.com/deliver/available_skus/v1/?filter=productIds(c7b989ab-5965-5aaa-a66e-20145ba594bc)';
-
     openBrowser(link, proxy);
-})();
+}
 
 function openBrowser(link, proxy) {
     let checkoutBrowser = Nightmare({
@@ -73,8 +70,6 @@ function openBrowser(link, proxy) {
             .end()
             .then((cookies) => {
                 console.log(cookies._cookieMapping(config.mapArray));
-                //--------TEST MODE--------
-                console.log(util.inspect(cookies));
             }).catch((error) => {
                 console.error(util.inspect(error));
             });
